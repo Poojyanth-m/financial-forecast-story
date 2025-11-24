@@ -1,0 +1,21 @@
+# Python venv
+venv/
+.env/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE files
+.vscode/
+.idea/
+
+# OS clutter
+.DS_Store
+Thumbs.db
+
+# Plots and generated outputs (optional - you may keep results/)
+# results/*.png
