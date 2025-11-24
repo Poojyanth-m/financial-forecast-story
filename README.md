@@ -146,16 +146,6 @@ results/forecast_plot.png
 7. **Narrative Generation**
    Natural-language summary of model + trends + recommendations.
 
-## 📦 **Submission Instructions**
-
-Zip required files:
-
-```bash
-zip -r submission.zip src results README.md requirements.txt
-```
-
-Submit `submission.zip`.
-
 ## 🔮 **Future Enhancements**
 
 * Prophet & Auto-ARIMA model comparison
