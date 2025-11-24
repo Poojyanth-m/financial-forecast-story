@@ -1,7 +1,17 @@
 # 📈 Financial Forecast Story — Time Series Forecasting with SARIMAX
 
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)]()
+[![Status](https://img.shields.io/badge/Project-Completed-success.svg)]()
+[![Tools](https://img.shields.io/badge/Tools-Pandas%20%7C%20Statsmodels%20%7C%20Matplotlib-orange.svg)]()
+
+A clean, end-to-end **financial forecasting pipeline** using SARIMAX.  
+Generates synthetic time series data, cleans it, trains a forecasting model, evaluates accuracy, and even creates an **automatic narrative summary** and **plots**.
+
+---
+
 ## ✅ Project Overview
 This mini-project builds an **end-to-end financial forecasting pipeline** using **SARIMAX**, producing:
+
 - Monthly synthetic financial data  
 - Cleaned and prepared time-series  
 - Train/validation/test split (70% / 15% / 15%)  
@@ -12,7 +22,10 @@ This mini-project builds an **end-to-end financial forecasting pipeline** using 
 
 This project is simple, lightweight, and fully runnable within minutes — ideal for academic mini-projects.
 
+---
+
 ## 📂 **Project Structure**
+```
 financial-forecast-story/
 │
 ├── data/                         # synthetic_monthly.csv stored here
@@ -31,12 +44,15 @@ financial-forecast-story/
 │   ├── model_summary.txt
 │   ├── narrative.txt
 │   └── forecast_plot.png
-
+│
 ├── scripts/
 │   └── plot_forecast.py          # optional visualization script
-
+│
 ├── requirements.txt
 └── README.md
+```
+
+---
 
 ## 🚀 **How to Run the Project**
 
@@ -44,21 +60,21 @@ financial-forecast-story/
 ```bash
 python3 -m venv venv
 source venv/bin/activate
-
 ```
-### **2. Install dependencies**
 
+### **2. Install dependencies**
 ```bash
 pip install -r requirements.txt
 ```
 
 ### **3. Run the full forecasting pipeline**
-
 ```bash
 python src/run_pipeline.py
 ```
 
 This generates all results in the `results/` folder.
+
+---
 
 ## 📊 **Generated Outputs**
 
@@ -83,6 +99,8 @@ Example metrics (your values may differ):
 }
 ```
 
+---
+
 ## ✍ **Narrative Example**
 
 From `results/narrative.txt`:
@@ -96,6 +114,8 @@ Executive summary:
 - MAPE: 9.25%
 Recommendations: Monitor forecast monthly and update model if performance degrades.
 ```
+
+---
 
 ## 🧹 **Optional: Plot the Forecast**
 
@@ -111,44 +131,46 @@ Output saved to:
 results/forecast_plot.png
 ```
 
+---
+
 ## 📘 **Methodology Summary**
 
-1. **Data Generation**
+1. **Data Generation**  
    Synthetic monthly data from 2015–2024 with trend + seasonality + noise.
 
-2. **Data Preparation**
+2. **Data Preparation**  
+   - Parse dates  
+   - Sort and clean  
+   - Set monthly frequency  
+   - Interpolate missing values  
 
-   * Parse dates
-   * Sort and clean
-   * Set monthly frequency
-   * Interpolate missing values
-
-3. **Train/Val/Test Split**
+3. **Train/Val/Test Split**  
    Ratio: **70% / 15% / 15%**.
 
-4. **SARIMAX Model**
+4. **SARIMAX Model**  
+   - Small grid search for p, q, P, Q  
+   - Seasonal period m = 12  
+   - Best model selected via AIC  
 
-   * Small grid search for p, q, P, Q
-   * Seasonal period m = 12
-   * Best model selected via AIC
+5. **Forecasting**  
+   - Forecast horizon = max(12, test length)  
+   - Confidence intervals included  
 
-5. **Forecasting**
+6. **Evaluation Metrics**  
+   - MAE  
+   - RMSE  
+   - MAPE  
 
-   * Forecast horizon = max(12, test length)
-   * Confidence intervals included
+7. **Narrative Generation**  
+   Automated summary of trends, accuracy, and recommendations.
 
-6. **Evaluation Metrics**
-
-   * Mean Absolute Error (MAE)
-   * Root Mean Squared Error (RMSE)
-   * Mean Absolute Percentage Error (MAPE)
-
-7. **Narrative Generation**
-   Natural-language summary of model + trends + recommendations.
+---
 
 ## 🔮 **Future Enhancements**
 
-* Prophet & Auto-ARIMA model comparison
-* Streamlit dashboard UI
-* Real financial dataset support
-* Rolling window cross-validation
+- Prophet & Auto-ARIMA model comparison  
+- Streamlit dashboard UI  
+- Real financial dataset support  
+- Rolling window cross-validation  
+
+---
