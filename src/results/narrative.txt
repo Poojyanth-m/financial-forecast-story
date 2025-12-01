@@ -1,0 +1,7 @@
+Executive summary:
+- Detected trend: upward
+- Model: order=(0, 1, 3), seasonal=(0, 1, 1, 12)
+- MAE: 13.56
+- RMSE: 17.50
+- MAPE: 9.25%
+Recommendations: Monitor forecast monthly and update model if performance degrades.
